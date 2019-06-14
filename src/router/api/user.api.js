@@ -1,0 +1,40 @@
+import resourceLoader from '../../utility/routeHandler';
+import userControllerLoader from '../../controller/user.controller';
+
+const rxjsLoader = 'rxjs/operators';
+
+export default new Promise(async (asyncExport) => {
+  const [resource, userController, { take }] = await Promise.all([
+    resourceLoader,
+    userControllerLoader,
+    import(rxjsLoader),
+  ]);
+
+  function user(db) {
+    return resource({
+      create(
+        {
+          body: {
+            email, firstName, lastName, password,
+          },
+        },
+        res,
+        next,
+      ) {
+        userController
+          .createUser(email, password, firstName, lastName, db)
+          .pipe(take(1))
+          .subscribe(
+            (value) => {
+              res.status(value.statusCode).json(value);
+            },
+            (error) => {
+              next(error);
+            },
+          );
+      },
+    });
+  }
+  asyncExport(user);
+  return true;
+});
