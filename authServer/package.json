@@ -1,0 +1,103 @@
+{
+  "name": "auth-sequlize-jwt-singletenant",
+  "version": "1.0.0",
+  "description": "node server for auth with relational database JWT singletenant with roles",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js --exec babel-node",
+    "debug": "nodemon ./src/index.js --exec babel-node --inspect-brk",
+    "compile": "babel src --out-dir compiled --source-maps --watch",
+    "lint": "eslint --fix",
+    "lint-all": "eslint src/** --fix",
+    "lint-staged": "lint-staged",
+    "test": "jest test",
+    "coverage": "jest --collectCoverageFrom=src/** --collectCoverageFrom=!src/app.js --coverage test",
+    "docs": "jsdoc -r -c jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://code.qburst.com/joset/node-auth-sequlize-jwt-singletenant.git"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 50
+      }
+    }
+  },
+  "eslintIgnore": [
+    "swagger.yaml"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-do-expressions": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-proposal-private-methods": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "better-docs": "^1.1.6",
+    "elasticsearch-mock-js": "^1.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-no-async-without-await": "^1.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-spellcheck": "0.0.11",
+    "eslint-plugin-you-dont-need-momentjs": "^1.5.0",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "jsdoc": "^3.6.2",
+    "jsdoc-mermaid": "^1.0.0",
+    "lint-staged": "^8.1.7",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.17.1",
+    "sequelize-mock": "^0.10.2",
+    "superagent": "^5.0.5",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.1.0",
+    "@hapi/joi": "^15.0.3",
+    "basic-auth": "^2.0.1",
+    "bcrypt": "^3.0.6",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.4",
+    "heapdump": "^0.3.14",
+    "helmet": "^3.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.0.5",
+    "moment": "^2.24.0",
+    "mysql2": "^1.6.5",
+    "node-memwatch": "^1.0.1",
+    "on-headers": "^1.0.2",
+    "passport": "^0.4.0",
+    "passport-facebook-token": "^3.3.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "passport-token-google": "^0.1.2",
+    "pg": "^7.11.0",
+    "request-country": "^0.1.4",
+    "rxjs": "^6.5.2",
+    "sequelize": "^5.8.7",
+    "swagger-ui-express": "^4.0.5",
+    "tedious": "^6.1.2",
+    "uuid": "^3.3.2",
+    "yamljs": "^0.3.0"
+  }
+}
