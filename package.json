@@ -77,7 +77,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.4",
+    "express-fileupload": "^1.1.9",
     "heapdump": "^0.3.14",
     "helmet": "^3.18.0",
     "mariadb": "^2.0.5",
